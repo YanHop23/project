@@ -1,0 +1,74 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+@font-face {
+  font-family: 'IBMPlexSans-Medium';
+  src: local('IBMPlexSans-Medium'), local('IBMPlexSans-Medium'),
+    url('/IBMPlexSans-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'IBMPlexSans-Bold';
+  src: local('IBMPlexSans-Bold'), local('IBMPlexSans-Bold'),
+    url('/IBMPlexSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'IBMPlexSans-Light';
+  src: local('IBMPlexSans-Light'), local('IBMPlexSans-Light'),
+    url('/IBMPlexSans-Light.ttf') format('truetype');
+}
+
+:root {
+  font-family: 'IBMPlexSans-Medium';
+  line-height: 1.5;
+  font-weight: 400;
+
+
+  color-scheme: light dark;
+  color: #fff;
+  background-color: #FFFFFF;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+#header-switcher div {
+  text-shadow: 0 0 4px 0 rgba(18, 18, 20, .1)
+}
+
+html{
+  overflow-x: hidden;
+}
+
+
+input:focus,
+input:focus-visible {
+  outline: none;
+  border: none;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input::placeholder{
+  color:#ADB1B8;
+}
