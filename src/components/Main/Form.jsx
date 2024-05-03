@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-
+import KGSimg from './../imag/KGS.png';
 // eslint-disable-next-line react/prop-types
 const Form = ({ onView, onValueChange}) => {
     const [listIsVisible, setListIsVisible] = useState(false);
@@ -7,24 +7,34 @@ const Form = ({ onView, onValueChange}) => {
 
     const UZS = {
         name: 'UZS',
-        price: 12635.00
+        price: 12635.00,
+        imag: 'https://www.bybit.com/bycsi-root/common-static/wove/fiat-admin/2023-5-4/Tyoe=UZS.svg'
     }
 
     const RUB = {
         name: 'RUB',
-        price: 93.43
+        price: 93.43,
+        imag: 'https://www.bybit.com/bycsi-root/common-static/wove/fiat-admin/2023-5-4/Tyoe=RUB.svg'
+
+        
     }
     const KGS = {
         name: 'KGS',
-        price: 88.66
+        price: 88.66,
+        imag: KGSimg
+
     }
     const KZT = {
         name: 'KZT',
-        price: 441.43
+        price: 441.43,
+        imag: '	https://www.bybit.com/bycsi-root/common-static/wove/fiat-admin/2023-5-4/Tyoe=KZT.svg'
+
     }
     const TJS = {
         name: 'TJS',
-        price: 10.92
+        price: 10.92,
+        imag: 'https://www.bybit.com/bycsi-root/common-static/wove/fiat-admin/2023-5-4/Tyoe=TJS.svg'
+
     }
     
 
@@ -99,7 +109,7 @@ const Form = ({ onView, onValueChange}) => {
                     <input className="bg-inherit w-max" placeholder="Введите сумму" type="text" ref={mxnInput}></input>
                     <div className="flex gap-4 items-center">
                         <div className="bg-[#f1f3f0] flex items-center gap-2 cursor-pointer p-2 relative" onClick={() => setListIsVisible(!listIsVisible)}>
-                            <img src='./mxn.svg' width='24' height='24'></img>
+                            <img src={activeCurrency.imag} width='24' height='24'></img>
                             <div>{activeCurrency.name}</div>
                             <span className="w-[12px] h-[12px]">
                                 <img src='./drop-down-2.png'></img>
