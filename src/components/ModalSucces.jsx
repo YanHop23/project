@@ -1,11 +1,11 @@
 import gsap from "gsap";
 import { useEffect, useState } from "react";
-import { Link, useNavigate} from 'react-router-dom'
+import { useNavigate} from 'react-router-dom'
 import greenChekmark from './imag/pngwing.com.png';
 
-//modal for commission 1
+//modal for commission 2 
 // eslint-disable-next-line react/prop-types
-const Modal = ({ onClose }) => {
+const ModalSucces = ({ onClose }) => {
     const navigateTo = useNavigate();
     const closeHandler = () => {
         onClose();
@@ -16,11 +16,13 @@ const Modal = ({ onClose }) => {
     //change route
     useEffect(() => {
         const timeout = setTimeout(() => {
-            navigateTo("/payment");
+            navigateTo("/confirm");                
             closeHandler();
         }, 3000);
+
         return () => clearTimeout(timeout);
     }, [history])
+
     return (
         <div className="w-screen h-[130%] bg-black/50 absolute top-0 left-0 flex items-center justify-center">
           <div id='modal' className="bg-white w-[300px] h-[230px] flex rounded-lg flex-col items-center text-[#a7a6ac] p-8 text-[28px] ">
@@ -34,4 +36,4 @@ const Modal = ({ onClose }) => {
       
 }
 
-export default Modal;
+export default ModalSucces;

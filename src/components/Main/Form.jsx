@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import KGSimg from './../imag/KGS.png';
+
+// commission 1 (form)
 // eslint-disable-next-line react/prop-types
 const Form = ({ onView, onValueChange}) => {
     const [listIsVisible, setListIsVisible] = useState(false);
@@ -42,7 +44,7 @@ const Form = ({ onView, onValueChange}) => {
 
 
 
-    const [buttonText, setButtonText] = useState('Подтвердить');
+    const [buttonText, setButtonText] = useState('Перейти к оплате');
 
     const usdtInput = useRef(null);
     const mxnInput = useRef(null);
@@ -64,19 +66,19 @@ const Form = ({ onView, onValueChange}) => {
 
     const inputHandler = () => {
         if (usdtInput.current.value !== '') {
-            setButtonText('Подтвердить')
+            setButtonText('Перейти к оплате')
         }
         mxnInput.current.value = (usdtInput.current.value * activeCurrency.price).toFixed(2);
         const value = usdtInput.current.value;
         setInputValue(value);
         onValueChange(value);
+        гі
     }
 
     const testValue = 22;
 
     return <form className="w-[520px] h-[604px] rounded-3xl bg-[#FFFFFF] shadow-lg" onSubmit={formSubmit}>
         <div className="flex w-full h-[80px] items-center text-[32px] bg-[#E9EDF2] rounded-t-3xl cursor-pointer">
-       
             <div className="w-1/2 text-[#ADB1B8] text-center h-full pt-[20px] rounded-tl-3xl rounded-br-2xl">
                 Купить
             </div>
@@ -149,8 +151,8 @@ const Form = ({ onView, onValueChange}) => {
                 </div>
             </div>
             <div className="text-[#8b8d8a] self-start ml-[34px] text-[14px] mt-14">1 USDT ≈ {activeCurrency.price} {activeCurrency.name}</div>
-            <button type='submit' className={`w-[456px] rounded-lg  p-[12px] mt-2 transition duration-300 ease-in-out ${buttonText == 'Подтвердить' ? 'bg-[#F7A600] hover:bg-[#F7A600]/[50%]' : 'bg-[#ee2f62] hover:bg-[#ee2f62]/[50%] text-white'}`}>{buttonText}</button>
-        </div>
+                <button type='submit' className={`w-[456px] rounded-lg  p-[12px] mt-2 transition duration-300 ease-in-out ${buttonText == 'Перейти к оплате' ? 'bg-[#F7A600] hover:bg-[#F7A600]/[50%]' : 'bg-[#ee2f62] hover:bg-[#ee2f62]/[50%] text-white'}`}>{buttonText}</button>
+            </div>
     </form >
     
 }

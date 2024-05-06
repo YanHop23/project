@@ -1,4 +1,4 @@
-import urlo from "./img/image.png";
+import urlo from "./../imag/image.png";
 const Subheader = () => {
     return <header className="h-[80px] w-screen flex justify-center pt-[43px]">
         <div className="w-[1200px] h-full flex justify-between text-[#81858c] text-[14px]">
